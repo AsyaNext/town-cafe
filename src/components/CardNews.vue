@@ -1,7 +1,7 @@
 <template>
   <div class="card-news">
     <div class="card-news__content" v-html="news"></div>
-    <img class="card_news__image" :class="{ 'card-news__image--second' : slide === 2 }" :src="require(`../assets/images/news-image${slide}.svg`)" alt="news-image" />
+    <img class="card_news__image" :class="{ 'card-news__image--second' : slide !== 1 }" :src="require(`../assets/images/news-image${slide}.svg`)" alt="news-image" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 .card-news {
   margin: 10px 0;
-  width: 356px;
+  min-width: 444px;
   height: 524px;
   padding: 25px;
   box-shadow: 0 0 10px 0 #A7A7A7;
@@ -32,6 +32,11 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 1440px) {
+    &:first-child {
+      margin-left: 5px;
+    }
+  }
   &__content {
     font-size: 18px;
     line-height: 160.02%;

@@ -2,10 +2,12 @@
   <header class="header container">
     <img class="header__logo" src="../assets/icons/logo.svg" alt="logo" />
     <ul class="header__nav">
-      <li>Доставка</li>
       <li>О нас</li>
-      <li>Отзывы</li>
-      <li>О компании</li>
+      <li>Доставка и оплата</li>
+      <li>Меню</li>
+      <li>Новости</li>
+      <li>О заведениях</li>
+      <li>Наши контакты</li>
     </ul>
   </header>
 </template>
@@ -27,11 +29,17 @@ export default {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    gap: 40px;
 
     li {
-      font-size: 24px;
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 2rem;
       cursor: pointer;
+      color: #616161;
+      @media (max-width: 1024px) {
+        font-size: 1.125rem;
+      }
     }
   }
 }

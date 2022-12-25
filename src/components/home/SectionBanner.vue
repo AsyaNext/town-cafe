@@ -1,9 +1,9 @@
 <template>
   <section class="banner container">
     <div class="banner__info">
-      <h1 class="banner__info-title">Lorem ipsum lorem Lorem Ipsum</h1>
+      <h1 class="banner__info-title">Лучшие столовые Костромской области!</h1>
       <div class="banner__info-content info-content">
-        <div class="info-content__description">Lorem ipsumLorem ipsum  Lorem ipsum Lorem ipsum</div>
+        <div class="info-content__description">Cтараемся для вас!  Свежая выперчка каждый день! Акции на новые блюда каждый день.</div>
         <div class="info-content__list">
           <div
             class="info-content__item"
@@ -17,10 +17,28 @@
         </div>
       </div>
     </div>
+<!--    <div class="s-wrap s-type-1" role="slider">-->
+<!--      <input type="radio" id="s-1" name="slider-control" checked="checked">-->
+<!--      <input type="radio" id="s-2" name="slider-control">-->
+<!--      <input type="radio" id="s-3" name="slider-control">-->
+<!--      <ul class="s-content">-->
+<!--        <li class="s-item s-item-1"></li>-->
+<!--        <li class="s-item s-item-2"></li>-->
+<!--        <li class="s-item s-item-3"></li>-->
+<!--      </ul>-->
+<!--      <div class="s-control">-->
+<!--        <label class="s-c-1" for="s-1"></label>-->
+<!--        <label class="s-c-2" for="s-2"></label>-->
+<!--        <label class="s-c-3" for="s-3"></label>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="banner__slider">
       <carousel ref="myCarousel" :items-to-show="1">
         <slide v-for="slide in 3" :key="slide">
-          <img src="../../assets/images/banner-image.png">
+          <div
+            class="banner__slide"
+            :style="{ backgroundImage: `url(${require('../../assets/images/banner-image.png')})` }"
+          ></div>
         </slide>
       </carousel>
       <div class="banner__slider-pagination">
@@ -48,9 +66,9 @@ export default {
   data: () => ({
     slide: 0,
     characteristics: [
-      { title: 'Lorem ipsum', value: '11%' },
-      { title: 'Lorem ipsum', value: '334+' },
-      { title: 'Lorem ipsum', value: '25 000' }
+      { title: 'Довольных клиентов', value: '100%' },
+      { title: 'Столовых в сети', value: '10+' },
+      { title: 'Посещаемость', value: '1500+' }
     ]
   }),
   methods: {
@@ -66,29 +84,35 @@ export default {
 .banner {
   display: flex;
   justify-content: space-between;
+  gap: 60px;
+  margin: 0 auto !important;
   &__info {
-    margin: 75px 0 120px;
-    flex-basis: 50%;
     display: flex;
+    flex-basis: 50%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    padding-left: 60px;
     &-title {
-      font-size: 72px;
-      line-height: 70px;
-      margin-bottom: 140px;
+      max-width: 650px;
+      width: 100%;
+      font-size: 3rem;
+      line-height: 4.125rem;
+      margin-bottom: 15px;
     }
 
     .info-content {
       &__description {
-        max-width: 430px;
+        max-width: 650px;
         width: 100%;
         font-size: 24px;
         line-height: 33px;
         margin-bottom: 80px;
       }
       &__list {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         justify-content: space-between;
+        gap: 15px;
       }
       &__item {
         display: flex;
@@ -98,27 +122,30 @@ export default {
           margin-bottom: 38px;
         }
         &-title {
-          font-size: 24px;
+          font-size: 1.5rem;
           line-height: 33px;
           margin-bottom: 20px;
+          text-align: center;
         }
         &-value {
-          font-size: 72px;
+          font-size: 4.5rem;
           line-height: 98px;
+          @media (max-width: 1440px) {
+            font-size: 3.5rem;
+            line-height: 60px;
+          }
         }
       }
     }
   }
   &__slider {
     position: relative;
-    right: -60px;
-    max-width: 700px;
-    width: 100%;
+    width: 50%;
     &-pagination {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 70px;
+      bottom: 30px;
       display: flex;
       justify-content: center;
       gap: 16px;
@@ -133,6 +160,15 @@ export default {
       .button--active {
         background-color: #D9D9D9;
       }
+    }
+  }
+  &__slide {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 1010px;
+    @media (max-width: 1440px) {
+      height: 850px;
     }
   }
 }

@@ -5,14 +5,11 @@
         <img src="../../assets/icons/icon-cafe.svg" alt="cafe-icon" />
       </div>
       <div class="cafe__title">
-        Lorem ipsum dolor sit amet ? consectetur adipiscing elit.Lorem ipsum
-        dolor sit amet consectetur adipiscing elit.
+        Столовые высочайшего качества
       </div>
       <div class="cafe__description">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit.
-        Lorem ipsum dolor sit amet consectetur adipiscing elit.
-        Lorem ipsum dolor sit amet consectetur adipiscing elit.Lorem ipsum dolor sit amet  elit.
-        Lorem ipsum dolor sit amet consectetur 10 000.
+        При заказе от 1 500 Р в подарок вы получите бонусное блюдо из новой коллекции!
+        Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции.
       </div>
       <div class="cafe__more">
         <span>Подробнее</span>
@@ -34,6 +31,7 @@ export default {
 .cafe {
   padding: 95px 0 100px;
   display: flex;
+  justify-content: space-between;
   &__content {
     width: 50%;
     margin-right: 50px;
@@ -46,27 +44,28 @@ export default {
     margin-bottom: 70px;
   }
   &__title {
-    max-width: 540px;
+    max-width: 662px;
     width: 100%;
-    font-size: 40px;
+    font-size: 3rem;
     line-height: 117.02%;
-    margin-bottom: 34px;
+    margin-bottom: 15px;
+    text-align: center;
   }
   &__description {
     max-width: 600px;
     width: 100%;
     font-weight: 200;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 116.02%;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
   &__more {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     cursor: pointer;
     span {
-      font-size: 24px;
+      font-size: 1.125rem;
       line-height: 94.52%;
       color: $orange-4;
     }
@@ -75,7 +74,6 @@ export default {
     }
   }
   &__image {
-    margin-top: 40px;
   }
 }
 </style>

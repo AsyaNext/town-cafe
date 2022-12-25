@@ -1,13 +1,14 @@
 <template>
   <section class="info">
     <div class="info__wrapper container">
+      <img class="info__image" src="../../assets/images/info-image.png" alt="info-image" />
       <div class="info__content">
         <div class="info__description">
-          Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique  nunc.Aliquam elementum tristique  nunc.
+          Акции и скидки каждый день!
         </div>
-        <div class="info__caption">Lorem ipsumLorem ipsum  Lorem ipsum Lorem ipsum</div>
+        <div class="info__caption">При заказе от 1 500 Р в подарок вы получите бонусное блюдо из новой коллекции!
+          Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. Условие акции. </div>
       </div>
-      <img class="info__image" src="../../assets/images/info-image.png" alt="info-image" />
     </div>
   </section>
 </template>
@@ -25,22 +26,22 @@ export default {
   padding: 55px 0;
   &__wrapper {
     display: flex;
+    gap: 60px;
+    justify-content: space-between;
   }
   &__content {
-    max-width: 714px;
-    width: 100%;
-    margin-right: 66px;
+    text-align: right;
   }
   &__description {
     font-weight: 500;
-    font-size: 36px;
-    line-height: 130.52%;
-    margin: 60px 0 34px;
+    font-size: 3rem;
+    line-height: 66px;
+    text-align: center;
+    height: 100px;
   }
   &__caption {
-    max-width: 440px;
-    width: 100%;
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 1.5rem;
     line-height: 33px;
   }
 }

@@ -3,7 +3,7 @@
     <SectionBanner />
     <SectionDelivery />
     <SectionMenu />
-    <SectionNews />
+    <SectionNews :display-width="displayWidth" />
     <SectionInfo />
     <SectionCafe />
   </div>
@@ -28,6 +28,11 @@ export default {
     SectionMenu,
     SectionDelivery,
     SectionBanner
+  },
+  computed: {
+    displayWidth () {
+      return document.body.clientWidth
+    }
   }
 }
 </script>

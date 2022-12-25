@@ -2,7 +2,7 @@
   <section class="menu container">
     <div class="menu__headline">
       <img src="../../assets/icons/icon-menu.svg" alt="menu-icon" />
-      <div class="menu__headline-title">Menu</div>
+      <div class="menu__headline-title">Меню</div>
     </div>
     <div class="menu__list">
       <CardMenu class="menu__item" v-for="i in 16" :key="i" :dish="dish" />
@@ -20,7 +20,7 @@ export default {
     dish: {
       title: 'Loren ipsum dolor',
       description: 'Loren ipsum dolor sit.',
-      weight: '170/150/50',
+      weight: 200,
       price: 255
     }
   })
@@ -52,7 +52,7 @@ export default {
     justify-content: space-around;
     flex-wrap: wrap;
     column-gap: 42px;
-    row-gap: 70px;
+    row-gap: 30px;
     margin-bottom: 60px;
   }
   &__item {

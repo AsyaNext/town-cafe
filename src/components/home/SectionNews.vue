@@ -2,17 +2,17 @@
   <section class="news container">
     <div class="news__headline">
       <img src="../../assets/icons/icon-news.svg" alt="news-icon" />
-      <div class="news__headline-title">News</div>
+      <div class="news__headline-title">Новости</div>
     </div>
     <div class="news__slider">
-      <carousel ref="myCarousel" :items-to-show="3" :wrap-around="true">
-        <slide v-for="i in 9" :key="i">
-          <CardNews :news="news[i - 1].content" :slide="(i + 1) % 3 === 0 ? 3 : (i + 1) % 3" />
+      <carousel ref="myCarousel" :settings="settings" :breakpoints="breakpoints">
+        <slide v-for="i in 6" :key="i">
+          <CardNews :news="news[i - 1].content" :slide="i % 3 === 0 ? 3 : i % 3" />
         </slide>
       </carousel>
       <div class="news__slider-pagination">
         <button
-          v-for="i in 9"
+          v-for="i in 5"
           :key="i"
           :class="{ 'button--active': slide === i - 1 }"
           @click="paginate(i - 1)"
@@ -34,20 +34,78 @@ export default {
     Carousel,
     Slide
   },
+  props: {
+    displayWidth: {
+      type: Number
+    }
+  },
   data: () => ({
     slide: 0,
     news: [
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae.Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Diam massa commodo pharetra id ultricies vitae.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit. Lorem ipsum dolor sit amet,consectetur adipiscing elit.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae.Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Diam massa commodo pharetra id ultricies vitae.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit. Lorem ipsum dolor sit amet,consectetur adipiscing elit.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae.Aliquam elementum tristique consectetur eu nunc, mattis velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Diam massa commodo pharetra id ultricies vitae.' },
-      { content: '<span class="text-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit. Lorem ipsum dolor sit amet,consectetur adipiscing elit.' }
-    ]
+      {
+        content: `Утро должно начинаться с хорошего!
+          Тогда и день задаётся! Спешите в новое кафе "Город" с утра, и удача сегодня вам обязательно улыбнётся!
+
+          ТЦ "На Сенной", пр-т Мира, 33`
+      },
+      {
+        content: 'Все любят сельдь под шубой! Это незабываемый вкус на все времена. Приходите в новое кафе “Город” в ТЦ “На Сенной” и наслаждайтесь свежей и вкусной едой, это здорово!\n' +
+          '\n' +
+          'И напоминаем о приятной акции, которая действует ежедневно: скидка 30% на блюда меню с 18:00 до 20:00 ч.\n'
+      },
+      {
+        content: 'Время для счастья - сейчас. Место для счастья - здесь!Новое, красивое кафе с вкусной едой в самом сердце города - в ТЦ "На Сенной" - отличное место для завтрака, обеда и ужина.В кафе действуют скидки по карте "Адмирал"*, а после 18 ч - скидка 30% на блюда меню. Очень удобно взять готовую еду домой, и быть свободным для общения с близкими и отдыха.\n' +
+          '\n' +
+          '*Скидка по карте "Адмирал" действует до 30.11.22 г.\n'
+      },
+      {
+        content: 'Утро должно начинаться с хорошего! \n' +
+          'Тогда и день задаётся! Спешите в новое кафе "Город" с утра, и удача сегодня вам \n' +
+          'обязательно улыбнётся!\n' +
+          '\n' +
+          'ТЦ "На Сенной", пр-т Мира, 33\n'
+      },
+      {
+        content: 'Все любят сельдь под шубой! Это незабываемый вкус на все времена. Приходите в новое кафе “Город” в ТЦ “На Сенной” и наслаждайтесь свежей и вкусной едой, это здорово!\n' +
+          '\n' +
+          'И напоминаем о приятной акции, которая действует ежедневно: скидка 30% на блюда меню с 18:00 до 20:00 ч.\n'
+      },
+      {
+        content: 'Время для счастья - сейчас. Место для счастья - здесь!Новое, красивое кафе с вкусной едой в самом сердце города - в ТЦ "На Сенной" - отличное место для завтрака, обеда и ужина.В кафе действуют скидки по карте "Адмирал"*, а после 18 ч - скидка 30% на блюда меню. Очень удобно взять готовую еду домой, и быть свободным для общения с близкими и отдыха.\n' +
+          '\n' +
+          '*Скидка по карте "Адмирал" действует до 30.11.22 г.\n'
+      }
+    ],
+    settings: {
+      itemsToShow: 1,
+      snapAlign: 'start'
+    },
+    breakpoints: {
+      769: {
+        itemsToShow: 2,
+        snapAlign: 'start'
+      },
+      1367: {
+        itemsToShow: 3,
+        snapAlign: 'start'
+      },
+      1920: {
+        itemsToShow: 3,
+        snapAlign: 'start'
+      }
+    }
   }),
+  computed: {
+    slideShow () {
+      if (this.displayWidth > 1366) {
+        return 3
+      } else if (this.displayWidth <= 1366 && this.displayWidth > 768) {
+        return 2
+      } else {
+        return 1
+      }
+    }
+  },
   methods: {
     paginate (slide) {
       this.slide = slide
@@ -77,7 +135,7 @@ export default {
     }
   }
   &__slider {
-    max-width: 1300px;
+    max-width: 1392px;
     width: 100%;
     &-pagination {
       margin-top: 40px;

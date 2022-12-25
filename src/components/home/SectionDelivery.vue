@@ -3,9 +3,9 @@
     <div class="delivery__wrapper container">
       <div class="delivery__content">
         <div class="delivery__description">
-          <span class="text-medium">Cafe GOROD</span> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam massa commodo pharetra id ultricies vitae. Aliquam elementum tristique consectetur eu nunc, mattis velit.Aliquam element velit. Aliquam elementum tristique consectetur eu nunc, mattis velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Diam massa commodo phar. Aliquam ele  mattis velit.
-          Aliquam elementum tristique consectetur eu nuAliquam elementum tristique consectetur eu nunc, mattis velit.Aliquam element velit.Aliquam elementum tristique consectetur eu nunc.
+          <span class="text-medium">Кафе ГОРОD</span> - Описание. Доставка и оплата. Очень длинный текст.
+          Описание. Доставка и оплата. Очень длинный текст. Описание. Доставка и оплата.
+          Очень длинный текст. Описание. Доставка и оплата. Очень длинный текст. Описание. Доставка и оплата. Очень длинный текст. Описание. Доставка и оплата. Очень длинный текст. Описание. Доставка и оплата.
         </div>
         <div class="delivery__list">
           <div
@@ -20,11 +20,11 @@
       </div>
       <div class="delivery__cards">
         <div class="delivery__card">
-          <div class="delivery__card-title text-right">Loren ipsum aliquam elementum</div>
+          <div class="delivery__card-title text-right">Высокое качество блюд</div>
           <img class="delivery__card-image" src="../../assets/images/delivery-image1.svg" alt="delivery icon" />
         </div>
         <div class="delivery__card">
-          <div class="delivery__card-title">Loren ipsum aliquam elementum</div>
+          <div class="delivery__card-title">Своевременная доставка в любую точку Костромы</div>
           <img class="delivery__card-image" src="../../assets/images/delivery-image2.svg" alt="delivery icon" />
         </div>
       </div>
@@ -38,16 +38,16 @@ export default {
   data: () => ({
     deliveryItems: [
       {
-        title: 'Loren ipsum',
-        description: 'Diam massa commodo phar. Aliquam ele  mattis velit.Aliquam elementum tristique  nunc, ipsum dolor sit amet.'
+        title: 'Нас выбирают',
+        description: 'Каждое наше блюдо готовится из отборных продуктов высокого качества.'
       },
       {
-        title: 'Loren ipsum',
-        description: 'Diam massa commodo phar. Aliquam ele  mattis velit.Aliquam elementum.'
+        title: 'Нас выбирают',
+        description: 'Каждое наше блюдо готовится из отборных продуктов высокого качества.'
       },
       {
-        title: 'Loren ipsum',
-        description: 'Diam massa commodo phar. Aliquam ele  mattis velit.'
+        title: 'Нас выбирают',
+        description: 'Очень длинный текст. Очень длинный текст. Очень длинный текст. Очень длинный текст. Очень длинный текст. Очень длинный текст.Очень длинный.'
       }
     ]
   })
@@ -57,8 +57,6 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/styles/vars";
 .delivery {
-  position: relative;
-  top: -55px;
   background-color: $brown-1;
   padding: 100px 0 65px;
   &__wrapper {
@@ -69,13 +67,12 @@ export default {
   &__description {
     max-width: 737px;
     width: 100%;
-    font-size: 18px;
-    line-height: 160.02%;
+    font-size: 1.125rem;
+    line-height: 160%;
     margin-bottom: 100px;
   }
   &__list {
     display: flex;
-    flex-wrap: wrap;
     gap: 40px;
     max-width: 950px;
     width: 100%;
@@ -90,13 +87,13 @@ export default {
     width: 100%;
     &-title {
       font-weight: 500;
-      font-size: 18px;
-      line-height: 160.02%;
+      font-size: 1.125rem;
+      line-height: 160%;
       margin-bottom: 10px;
     }
     &-description {
-      font-size: 14px;
-      line-height: 130.02%;
+      font-size: 0.875rem;
+      line-height: 130%;
       color: $brown-3;
     }
   }
@@ -114,10 +111,10 @@ export default {
     height: 170px;
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.3);
     &-title {
-      max-width: 270px;
+      max-width: 350px;
       width: 100%;
-      font-size: 20px;
-      line-height: 124.02%;
+      font-size: 1.125rem;
+      line-height: 124%;
       padding: 12px;
     }
     .text-right {
