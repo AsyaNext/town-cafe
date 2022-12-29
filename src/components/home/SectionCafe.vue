@@ -31,10 +31,10 @@ export default {
 .cafe {
   padding: 95px 0 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   &__content {
     width: 50%;
-    margin-right: 50px;
+    margin-bottom: 50px;
   }
   &__icon {
     max-width: 600px;

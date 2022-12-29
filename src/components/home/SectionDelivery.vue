@@ -61,7 +61,7 @@ export default {
   padding: 100px 0 65px;
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 90px;
   }
   &__description {

@@ -9,11 +9,10 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-carousel": "^2.0.0",
+    "@hennge/vue3-pagination": "^1.0.17",
     "core-js": "^3.6.5",
     "swiper": "^8.4.5",
     "vue": "^3.2.45",
-    "vue-awesome-swiper": "^5.0.1",
-    "vue-easy-slider": "^5.3.4",
     "vue-router": "^4.0.0-0",
     "vue-template-compiler": "^2.7.14",
     "vue3-carousel": "^0.2.8",

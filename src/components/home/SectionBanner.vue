@@ -161,6 +161,9 @@ export default {
         background-color: #D9D9D9;
       }
     }
+    .carousel__slide {
+      width: 100% !important;
+    }
   }
   &__slide {
     background-size: cover;

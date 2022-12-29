@@ -27,10 +27,11 @@ export default {
   &__wrapper {
     display: flex;
     gap: 60px;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   &__content {
     text-align: right;
+    max-width: 60%;
   }
   &__description {
     font-weight: 500;

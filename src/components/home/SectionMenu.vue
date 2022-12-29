@@ -7,27 +7,38 @@
     <div class="menu__list">
       <CardMenu class="menu__item" v-for="i in 16" :key="i" :dish="dish" />
     </div>
-    <button class="menu__btn">Показать ещё</button>
+<!--    <button class="menu__btn">Показать ещё</button>-->
+    <v-pagination
+      v-model="currentPage"
+      :pages="10"
+      :range-size="1"
+      active-color="#FFFFFF"
+      :hideFirstButton="true"
+      :hideLastButton="true"
+    />
   </section>
 </template>
 
 <script>
 import CardMenu from '../CardMenu'
+import VPagination from '@hennge/vue3-pagination'
+import '@hennge/vue3-pagination/dist/vue3-pagination.css'
 export default {
   name: 'SectionMenu',
-  components: { CardMenu },
+  components: { CardMenu, VPagination },
   data: () => ({
     dish: {
       title: 'Loren ipsum dolor',
       description: 'Loren ipsum dolor sit.',
       weight: 200,
       price: 255
-    }
+    },
+    currentPage: 1
   })
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "src/assets/styles/vars";
 .menu {
   margin: 50px auto 60px;
@@ -75,6 +86,24 @@ export default {
     cursor: pointer;
     &:hover {
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+.Pagination {
+  .Page {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 20px !important;
+    &:hover {
+      border: none;
+      background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+  }
+  .Page-active {
+    border-color: #FF5D29 !important;
+    color: #FF5D29;
+    &:hover {
+      background-color: #FFE2D9 !important;
     }
   }
 }

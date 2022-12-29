@@ -37,26 +37,27 @@
           <div class="address__list">
             <div class="address__item">
               <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
-              <span class="address__item-link">
+              <span class="address__item-link" @click="isOpenModal = true">
                 <span>На карте</span>
                 <img src="../assets/icons/icon-map.svg" alt="">
               </span>
             </div>
             <div class="address__item">
               <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
-              <span class="address__item-link">
+              <span class="address__item-link" @click="isOpenModal = true">
                 <span>На карте</span>
                 <img src="../assets/icons/icon-map.svg" alt="">
               </span>
             </div>
             <div class="address__item">
               <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
-              <span class="address__item-link">
+              <span class="address__item-link" @click="isOpenModal = true">
                 <span>На карте</span>
                 <img src="../assets/icons/icon-map.svg" alt="">
               </span>
             </div>
           </div>
+          <ModalMap v-if="isOpenModal" @close="isOpenModal = false" />
 <!--          <div class="address__map">-->
 <!--            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae3d5dd35fb7e7424901c9f60527ec4beb008821763feebba1c5a084dbd3ba6a3&amp;source=constructor" width="420" height="200" frameborder="0"></iframe>-->
 <!--          </div>-->
@@ -71,10 +72,13 @@
 </template>
 
 <script>
+import ModalMap from './ModalMap'
 export default {
   name: 'Footer',
+  components: { ModalMap },
   data: () => ({
-    address: 'Рабочий проспект ТЦ Семерка 2 этаж'
+    address: 'Рабочий проспект ТЦ Семерка 2 этаж',
+    isOpenModal: false
   }),
   methods: {
     copyText () {
