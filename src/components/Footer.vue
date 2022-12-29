@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer id="contacts" class="footer">
     <div class="footer__wrapper container">
       <div class="footer__content">
         <div class="social-networks">

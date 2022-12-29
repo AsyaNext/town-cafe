@@ -1,5 +1,5 @@
 <template>
-  <section class="news container">
+  <section id="news" class="news container">
     <div class="news__headline">
       <img src="../../assets/icons/icon-news.svg" alt="news-icon" />
       <div class="news__headline-title">Новости</div>

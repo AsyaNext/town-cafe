@@ -1,5 +1,5 @@
 <template>
-  <section class="menu container">
+  <section id="menu" class="menu container">
     <div class="menu__headline">
       <img src="../../assets/icons/icon-menu.svg" alt="menu-icon" />
       <div class="menu__headline-title">Меню</div>
@@ -48,7 +48,8 @@ export default {
     }
   }
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
     flex-wrap: wrap;
     column-gap: 42px;

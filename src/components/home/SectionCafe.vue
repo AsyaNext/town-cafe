@@ -1,5 +1,5 @@
 <template>
-  <section class="cafe container">
+  <section id="cafe" class="cafe container">
     <div class="cafe__content">
       <div class="cafe__icon">
         <img src="../../assets/icons/icon-cafe.svg" alt="cafe-icon" />

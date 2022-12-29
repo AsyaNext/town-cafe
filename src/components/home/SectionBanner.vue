@@ -1,5 +1,5 @@
 <template>
-  <section class="banner container">
+  <section id="about" class="banner container">
     <div class="banner__info">
       <h1 class="banner__info-title">Лучшие столовые Костромской области!</h1>
       <div class="banner__info-content info-content">
@@ -85,7 +85,7 @@ export default {
   display: flex;
   justify-content: space-between;
   gap: 60px;
-  margin: 0 auto !important;
+  margin: 73px auto 0 !important;
   &__info {
     display: flex;
     flex-basis: 50%;
@@ -166,10 +166,7 @@ export default {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 1010px;
-    @media (max-width: 1440px) {
-      height: 850px;
-    }
+    height: calc(100vh - 73px);
   }
 }
 </style>
