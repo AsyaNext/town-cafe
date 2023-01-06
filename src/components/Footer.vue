@@ -6,9 +6,9 @@
           <img src="../assets/icons/logo-footer.svg" alt="">
           <div class="social-networks__title">Соц.сети</div>
           <div class="social-networks__list">
-            <img src="../assets/icons/icon-vk.svg" alt="vk">
-            <img src="../assets/icons/icon-insta.svg" alt="instagram">
-            <img src="../assets/icons/icon-telegram.svg" alt="telegram">
+            <a href="https://vk.com/kafe.gorod"><img src="../assets/icons/icon-vk.svg" alt="vk"></a>
+            <a href="https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc="><img src="../assets/icons/icon-insta.svg" alt="instagram"></a>
+            <a href=""><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
           </div>
           <div class="social-networks__payment">
             <img src="../assets/icons/icon-mastercard.svg" alt="mastercard">
