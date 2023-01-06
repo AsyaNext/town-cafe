@@ -153,12 +153,12 @@ export default {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color: black;
-        border: 2px solid #D9D9D9;
+        background-color: #ECECEC;
+        border: none;
         cursor: pointer;
       }
       .button--active {
-        background-color: #D9D9D9;
+        background-color: #FFCB7D;
       }
     }
     .carousel__slide {
