@@ -8,7 +8,7 @@
           <div class="social-networks__list">
             <a href="https://vk.com/kafe.gorod" target="_blank"><img src="../assets/icons/icon-vk.svg" alt="vk"></a>
             <a href="https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc=" target="_blank"><img src="../assets/icons/icon-insta.svg" alt="instagram"></a>
-            <a href=""><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
+            <a href="" style="display: none"><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
           </div>
           <div class="social-networks__payment">
             <img src="../assets/icons/icon-mastercard.svg" alt="mastercard">
