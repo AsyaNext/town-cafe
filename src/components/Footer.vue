@@ -19,11 +19,11 @@
         <div class="nav">
           <div class="nav__title">Навигация</div>
           <ul class="nav__list">
-            <li>О нас</li>
-            <li>Доставка и оплата</li>
-            <li>Меню</li>
-            <li>Новости</li>
-            <li>О заведениях</li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#delivery">Доставка и оплата</a></li>
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#news">Новости</a></li>
+            <li><a href="#cafe">О заведениях</a></li>
           </ul>
         </div>
         <div class="phones">
@@ -114,12 +114,16 @@ export default {
         padding: 0;
         margin: 0;
         cursor: pointer;
-        li {
+        li a {
           font-size: 1.5rem;
           line-height: 33px;
           cursor: pointer;
           color: #B7B7B7;
           font-weight: 300;
+          text-decoration: none;
+          &:hover {
+            color: #ffffff;
+          }
         }
       }
     }

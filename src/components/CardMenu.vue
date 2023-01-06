@@ -24,6 +24,11 @@ export default {
 
 <style scoped lang="scss">
 .card-menu {
+  padding: 10px;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
   &__image {
     position: relative;
     border-radius: 5px;

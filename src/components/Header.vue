@@ -52,6 +52,10 @@ export default {
       @media (max-width: 1024px) {
         font-size: 1.125rem;
       }
+
+      &:hover {
+        color: #06092A;
+      }
     }
   }
 }
