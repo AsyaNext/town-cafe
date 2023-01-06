@@ -3,12 +3,9 @@
     <div class="header__wrapper container">
       <img class="header__logo" src="../assets/icons/logo.svg" alt="logo" />
       <ul class="header__nav">
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#delivery">Самовывоз и оплата</a></li>
-        <li><a href="#menu">Меню</a></li>
-        <li><a href="#news">Новости</a></li>
-        <li><a href="#cafe">О заведениях</a></li>
-        <li><a href="#contacts">Наши контакты</a></li>
+        <li v-for="(item, index) in navigation" :key="index">
+          <a :href="item.link">{{ item.title }}</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -16,7 +13,17 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data: () => ({
+    navigation: [
+      { title: 'О нас', link: '#about' },
+      { title: 'Самовывоз и оплата', link: '#delivery' },
+      { title: 'Меню', link: '#menu' },
+      { title: 'Новости', link: '#news' },
+      { title: 'О заведениях', link: '#cafe' },
+      { title: 'Наши контакты', link: '#contacts' }
+    ]
+  })
 }
 </script>
 

@@ -6,9 +6,9 @@
           <img src="../assets/icons/logo-footer.svg" alt="">
           <div class="social-networks__title">Соц.сети</div>
           <div class="social-networks__list">
-            <a href="https://vk.com/kafe.gorod" target="_blank"><img src="../assets/icons/icon-vk.svg" alt="vk"></a>
-            <a href="https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc=" target="_blank"><img src="../assets/icons/icon-insta.svg" alt="instagram"></a>
-            <a href="" style="display: none"><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
+            <a :href="socialNetworks.vk" target="_blank"><img src="../assets/icons/icon-vk.svg" alt="vk"></a>
+            <a :href="socialNetworks.insta" target="_blank"><img src="../assets/icons/icon-insta.svg" alt="instagram"></a>
+            <a href="" style="display: none" target="_blank"><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
           </div>
           <div class="social-networks__payment">
             <img src="../assets/icons/icon-mastercard.svg" alt="mastercard">
@@ -19,18 +19,20 @@
         <div class="nav">
           <div class="nav__title">Навигация</div>
           <ul class="nav__list">
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#delivery">Самовывоз и оплата</a></li>
-            <li><a href="#menu">Меню</a></li>
-            <li><a href="#news">Новости</a></li>
-            <li><a href="#cafe">О заведениях</a></li>
+            <li v-for="(item, index) in navigation" :key="index">
+              <a :href="item.link">{{ item.title }}</a>
+            </li>
           </ul>
         </div>
         <div class="phones">
           <span class="phones__title">Звони</span>
-          <span class="phones__item"><a href="tel:+79536600012">+7 953 660 0012</a></span>
+          <span class="phones__item">
+            <a :href="`tel:${phones.main.split(' ').join('')}`">{{ phones.main }}</a>
+          </span>
           <span class="phones__cooperation">сотрудничество</span>
-          <span class="phones__item"><a href="tel:+79536600012">+7 953 660 0012</a></span>
+          <span class="phones__item">
+            <a :href="`tel:${phones.cooperation.split(' ').join('')}`">{{ phones.cooperation }}</a>
+          </span>
         </div>
         <div class="address">
           <div class="address__title">Адрес</div>
@@ -78,7 +80,22 @@ export default {
   components: { ModalMap },
   data: () => ({
     address: 'Рабочий проспект ТЦ Семерка 2 этаж',
-    isOpenModal: false
+    isOpenModal: false,
+    navigation: [
+      { title: 'О нас', link: '#about' },
+      { title: 'Самовывоз и оплата', link: '#delivery' },
+      { title: 'Меню', link: '#menu' },
+      { title: 'Новости', link: '#news' },
+      { title: 'О заведениях', link: '#cafe' }
+    ],
+    phones: {
+      main: '+7 953 660 0012',
+      cooperation: '+7 953 660 0012'
+    },
+    socialNetworks: {
+      vk: 'https://vk.com/kafe.gorod',
+      insta: 'https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc='
+    }
   }),
   methods: {
     copyText () {
