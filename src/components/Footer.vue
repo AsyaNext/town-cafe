@@ -28,9 +28,9 @@
         </div>
         <div class="phones">
           <span class="phones__title">Звони</span>
-          <span class="phones__item">+7 953 660 0012</span>
+          <span class="phones__item"><a href="tel:+79536600012">+7 953 660 0012</a></span>
           <span class="phones__cooperation">сотрудничество</span>
-          <span class="phones__item">+7 953 660 0012</span>
+          <span class="phones__item"><a href="tel:+79536600012">+7 953 660 0012</a></span>
         </div>
         <div class="address">
           <div class="address__title">Адрес</div>
@@ -136,10 +136,14 @@ export default {
         margin-bottom: 10px;
       }
       &__item {
-        font-weight: 300;
-        font-size: 1.5rem;
-        line-height: 33px;
         margin-bottom: 15px;
+        a {
+          font-weight: 300;
+          font-size: 1.5rem;
+          line-height: 33px;
+          cursor: pointer;
+          text-decoration: none;
+        }
       }
       &__cooperation {
         font-weight: 300;
