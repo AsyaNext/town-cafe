@@ -15,6 +15,7 @@
       active-color="#FFFFFF"
       :hideFirstButton="true"
       :hideLastButton="true"
+      @update:modelValue="paginate"
     />
   </section>
 </template>
@@ -34,7 +35,13 @@ export default {
       price: 255
     },
     currentPage: 1
-  })
+  }),
+  methods: {
+    paginate () {
+      // Добавить обновление меню
+      window.location.href = '#menu'
+    }
+  }
 }
 </script>
 
