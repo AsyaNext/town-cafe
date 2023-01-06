@@ -4,7 +4,7 @@
       <img class="header__logo" src="../assets/icons/logo.svg" alt="logo" />
       <ul class="header__nav">
         <li><a href="#about">О нас</a></li>
-        <li><a href="#delivery">Доставка и оплата</a></li>
+        <li><a href="#delivery">Самовывоз и оплата</a></li>
         <li><a href="#menu">Меню</a></li>
         <li><a href="#news">Новости</a></li>
         <li><a href="#cafe">О заведениях</a></li>
