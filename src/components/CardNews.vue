@@ -1,6 +1,6 @@
 <template>
   <div class="card-news">
-    <div class="card-news__content" v-html="news"></div>
+    <div class="card-news__content" v-html="news.description"></div>
     <img class="card_news__image" :class="{ 'card-news__image--second' : slide !== 1 }" :src="require(`../assets/images/news-image${slide}.svg`)" alt="news-image" />
   </div>
 </template>
@@ -10,8 +10,8 @@ export default {
   name: 'CardNews',
   props: {
     news: {
-      type: String,
-      default: ''
+      type: Object,
+      required: true
     },
     slide: {
       type: Number,

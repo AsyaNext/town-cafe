@@ -10,6 +10,7 @@
   "dependencies": {
     "@chenfengyuan/vue-carousel": "^2.0.0",
     "@hennge/vue3-pagination": "^1.0.17",
+    "axios": "^1.2.2",
     "core-js": "^3.6.5",
     "swiper": "^8.4.5",
     "vue": "^3.2.45",

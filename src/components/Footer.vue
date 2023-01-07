@@ -37,22 +37,12 @@
         <div class="address">
           <div class="address__title">Адрес</div>
           <div class="address__list">
-            <div class="address__item">
-              <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
-              <span class="address__item-link" @click="isOpenModal = true">
-                <span>На карте</span>
-                <img src="../assets/icons/icon-map.svg" alt="">
-              </span>
-            </div>
-            <div class="address__item">
-              <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
-              <span class="address__item-link" @click="isOpenModal = true">
-                <span>На карте</span>
-                <img src="../assets/icons/icon-map.svg" alt="">
-              </span>
-            </div>
-            <div class="address__item">
-              <span class="address__item-name">Рабочий проспект ТЦ Семерка 2 этаж</span>
+            <div
+              class="address__item"
+              v-for="(address, index) in addresses"
+              :key="index"
+            >
+              <span class="address__item-name">{{ address.name }}</span>
               <span class="address__item-link" @click="isOpenModal = true">
                 <span>На карте</span>
                 <img src="../assets/icons/icon-map.svg" alt="">
@@ -75,11 +65,11 @@
 
 <script>
 import ModalMap from './ModalMap'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Footer',
   components: { ModalMap },
   data: () => ({
-    address: 'Рабочий проспект ТЦ Семерка 2 этаж',
     isOpenModal: false,
     navigation: [
       { title: 'О нас', link: '#about' },
@@ -97,10 +87,17 @@ export default {
       insta: 'https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc='
     }
   }),
+  computed: {
+    ...mapGetters(['addresses'])
+  },
   methods: {
+    ...mapActions(['getAddresses']),
     copyText () {
       navigator.clipboard.writeText(this.address)
     }
+  },
+  created () {
+    this.getAddresses()
   }
 }
 </script>
