@@ -48,7 +48,7 @@ export default {
 <style lang="scss">
 @import "src/assets/styles/vars";
 .menu {
-  margin: 50px auto 60px;
+  margin: 60px auto 60px;
   display: flex;
   flex-direction: column;
   align-items: center;

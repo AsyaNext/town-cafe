@@ -5,7 +5,7 @@
       <div class="news__headline-title">Новости</div>
     </div>
     <div class="news__slider">
-      <carousel ref="myCarousel" :settings="settings" :breakpoints="breakpoints">
+      <carousel ref="myCarousel" :settings="settings" :breakpoints="breakpoints" @slide-end="setActiveSlide">
         <slide v-for="i in news.length" :key="i">
           <CardNews :news="news[i - 1].content" :slide="i % 3 === 0 ? 3 : i % 3" />
         </slide>
@@ -105,6 +105,10 @@ export default {
     paginate (slide) {
       this.slide = slide
       this.$refs.myCarousel.slideTo(slide)
+    },
+    setActiveSlide (data) {
+      this.slide = data.currentSlideIndex
+      this.$refs.myCarousel.slideTo(data.currentSlideIndex)
     }
   }
 }

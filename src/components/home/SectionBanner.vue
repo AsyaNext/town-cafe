@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="banner__slider">
-      <carousel ref="myCarousel" :items-to-show="1">
+      <carousel ref="myCarousel" :items-to-show="1" @slide-end="setActiveSlide">
         <slide v-for="slide in 3" :key="slide">
           <div
             class="banner__slide"
@@ -60,6 +60,10 @@ export default {
     paginate (slide) {
       this.slide = slide
       this.$refs.myCarousel.slideTo(slide)
+    },
+    setActiveSlide (data) {
+      this.slide = data.currentSlideIndex
+      this.$refs.myCarousel.slideTo(data.currentSlideIndex)
     }
   }
 }
@@ -130,7 +134,7 @@ export default {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 30px;
+      bottom: 20px;
       display: flex;
       justify-content: center;
       gap: 16px;
