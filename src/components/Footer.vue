@@ -43,16 +43,13 @@
               :key="index"
             >
               <span class="address__item-name">{{ address.name }}</span>
-              <span class="address__item-link" @click="isOpenModal = true">
+              <span class="address__item-link" @click="openMap(address)">
                 <span>На карте</span>
                 <img src="../assets/icons/icon-map.svg" alt="">
               </span>
             </div>
           </div>
-          <ModalMap v-if="isOpenModal" @close="isOpenModal = false" />
-<!--          <div class="address__map">-->
-<!--            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae3d5dd35fb7e7424901c9f60527ec4beb008821763feebba1c5a084dbd3ba6a3&amp;source=constructor" width="420" height="200" frameborder="0"></iframe>-->
-<!--          </div>-->
+          <ModalMap :coords="addressMap" v-if="isOpenModal" @close="closeMap" />
         </div>
       </div>
       <div class="footer__prod">
@@ -85,15 +82,21 @@ export default {
     socialNetworks: {
       vk: 'https://vk.com/kafe.gorod',
       insta: 'https://instagram.com/gorod.cafe?igshid=YWJhMjlhZTc='
-    }
+    },
+    addressMap: []
   }),
   computed: {
     ...mapGetters(['addresses'])
   },
   methods: {
     ...mapActions(['getAddresses']),
-    copyText () {
-      navigator.clipboard.writeText(this.address)
+    openMap (address) {
+      this.addressMap = [address.lat, address.long]
+      this.isOpenModal = true
+    },
+    closeMap () {
+      this.addressMap = []
+      this.isOpenModal = false
     }
   },
   created () {

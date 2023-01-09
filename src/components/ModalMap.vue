@@ -7,16 +7,48 @@
           <span></span>
         </button>
       </div>
-      <div class="modal__map">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae3d5dd35fb7e7424901c9f60527ec4beb008821763feebba1c5a084dbd3ba6a3&amp;source=constructor" frameborder="0"></iframe>-->
-      </div>
+      <div id="yandex-map" class="modal__map"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ModalMap'
+  name: 'ModalMap',
+  props: {
+    coords: {
+      type: Array,
+      required: true
+    }
+  },
+  created () {
+    const scriptYandexMap = document.createElement('script')
+    scriptYandexMap.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+    document.head.appendChild(scriptYandexMap)
+    scriptYandexMap.addEventListener('load', this.initializeYandexMap)
+  },
+  methods: {
+    initializeYandexMap () {
+      // eslint-disable-next-line no-undef
+      ymaps.ready(() => {
+        // eslint-disable-next-line no-undef
+        this.map = new ymaps.Map('yandex-map', {
+          center: this.coords,
+          zoom: 17,
+          controls: ['fullscreenControl'],
+          searchControlProvider: 'yandex#search'
+        })
+        this.map.behaviors.disable('scrollZoom')
+        this.setMarkers()
+        // this.coordinates.then(() => this.setMarkers());
+      })
+    },
+    setMarkers () {
+      // eslint-disable-next-line no-undef
+      const placemark = new ymaps.Placemark(this.coords)
+      this.map.geoObjects.add(placemark)
+    }
+  }
 }
 </script>
 
