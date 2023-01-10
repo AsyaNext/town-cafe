@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="banner__slider">
-      <carousel ref="myCarousel" :items-to-show="1" @slide-end="setActiveSlide">
+      <carousel ref="myCarousel" :autoplay="3000" :items-to-show="1" @slide-end="setActiveSlide" :wrap-around="true">
         <slide v-for="slide in 3" :key="slide">
           <div
             class="banner__slide"
