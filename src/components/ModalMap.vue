@@ -7,7 +7,9 @@
           <span></span>
         </button>
       </div>
-      <div id="yandex-map" class="modal__map"></div>
+      <div class="modal__map">
+        <div id="yandex-map" style="width: 100%; height: 100%;"></div>
+      </div>
       <div class="modal__addresses">
         <div
           class="modal__addresses-item"
@@ -94,10 +96,14 @@ export default {
   z-index: 5;
   &__wrapper {
     position: relative;
-    top: -30px;
-    height: 80%;
+    top: 0;
+    height: 90%;
     width: 80%;
     background-color: #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   &__header {
     width: 100%;
@@ -127,13 +133,15 @@ export default {
     }
   }
   &__map {
+    position: relative;
     width: 100%;
     height: 100%;
+    flex-grow: 1;
   }
   &__addresses {
     position: absolute;
     width: 345px;
-    height: 90%;
+    height: 80%;
     right: 30px;
     top: 70px;
     background: rgba(255, 255, 255, 0.75);
