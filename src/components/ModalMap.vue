@@ -60,7 +60,7 @@ export default {
         this.map = new ymaps.Map('yandex-map', {
           center: this.localCoords,
           zoom: 17,
-          controls: ['fullscreenControl'],
+          controls: ['zoomControl'],
           searchControlProvider: 'yandex#search'
         })
         this.map.behaviors.disable('scrollZoom')
@@ -134,7 +134,7 @@ export default {
     position: absolute;
     width: 345px;
     height: 90%;
-    left: 30px;
+    right: 30px;
     top: 70px;
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
