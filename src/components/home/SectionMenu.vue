@@ -8,6 +8,7 @@
       <CardMenu class="menu__item" v-for="(dish, index) in menu.items" :key="index" :dish="dish" />
     </div>
     <v-pagination
+      v-if="menu.totalCount > itemsOnPage"
       v-model="currentPage"
       :pages="menu.totalCount / itemsOnPage"
       :range-size="1"

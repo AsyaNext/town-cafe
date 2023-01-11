@@ -64,16 +64,14 @@ export default {
   }
   &__title {
     position: relative;
-    &:hover {
-      .card-menu__title-tooltip {
-        opacity: 1;
-      }
-    }
     &-text {
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      &:hover + .card-menu__title-tooltip {
+        opacity: 1;
+      }
     }
     &-tooltip {
       position: absolute;
