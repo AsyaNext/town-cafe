@@ -22,7 +22,7 @@ export default createStore({
       const response = await api.get('addresses/landing')
       commit('SET_STATE', { data: 'addresses', payload: response.data.items })
     },
-    async getMenu ({ commit }, [page, size]) {
+    async getMenu ({ commit }, [page = 0, size = 20]) {
       const response = await api.get(`nomenclatures/landing?page=${page}&size=${size}`)
       commit('SET_STATE', { data: 'menu', payload: response.data })
     },

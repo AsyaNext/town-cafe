@@ -5,12 +5,11 @@
       <div class="menu__headline-title">Меню</div>
     </div>
     <div class="menu__list">
-      <CardMenu class="menu__item" v-for="i in 16" :key="i" :dish="dish" />
+      <CardMenu class="menu__item" v-for="(dish, index) in menu.items" :key="index" :dish="dish" />
     </div>
-<!--    <button class="menu__btn">Показать ещё</button>-->
     <v-pagination
       v-model="currentPage"
-      :pages="10"
+      :pages="menu.totalCount / itemsOnPage"
       :range-size="1"
       active-color="#FFFFFF"
       :hideFirstButton="true"
@@ -24,23 +23,33 @@
 import CardMenu from '../CardMenu'
 import VPagination from '@hennge/vue3-pagination'
 import '@hennge/vue3-pagination/dist/vue3-pagination.css'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SectionMenu',
   components: { CardMenu, VPagination },
   data: () => ({
-    dish: {
-      title: 'Loren ipsum dolor',
-      description: 'Loren ipsum dolor sit.',
-      weight: 200,
-      price: 255
-    },
-    currentPage: 1
+    // dish: {
+    //   title: 'Loren ipsum dolor',
+    //   description: 'Loren ipsum dolor sit.',
+    //   weight: 200,
+    //   price: 255
+    // },
+    currentPage: 1,
+    itemsOnPage: 20
   }),
+  computed: {
+    ...mapGetters(['menu'])
+  },
   methods: {
+    ...mapActions(['getMenu']),
     paginate () {
       // Добавить обновление меню
       window.location.href = '#menu'
+      this.getMenu([this.currentPage - 1, this.itemsOnPage])
     }
+  },
+  created () {
+    this.getMenu([])
   }
 }
 </script>
@@ -75,7 +84,7 @@ export default {
     margin-bottom: 60px;
   }
   &__item {
-    max-width: 307px;
+    max-width: 315px;
     width: 100%;
   }
   &__btn {
