@@ -10,7 +10,7 @@
     <v-pagination
       v-if="menu.totalCount > itemsOnPage"
       v-model="currentPage"
-      :pages="menu.totalCount / itemsOnPage"
+      :pages="Math.ceil(menu.totalCount / itemsOnPage)"
       :range-size="1"
       active-color="#FFFFFF"
       :hideFirstButton="true"
@@ -44,9 +44,10 @@ export default {
   methods: {
     ...mapActions(['getMenu']),
     paginate () {
-      // Добавить обновление меню
       window.location.href = '#menu'
-      this.getMenu([this.currentPage - 1, this.itemsOnPage])
+      setTimeout(() => {
+        this.getMenu([this.currentPage - 1, this.itemsOnPage])
+      }, 500)
     }
   },
   created () {
