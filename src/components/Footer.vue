@@ -2,19 +2,8 @@
   <footer id="contacts" class="footer">
     <div class="footer__wrapper container">
       <div class="footer__content">
-        <div class="social-networks">
+        <div class="footer__logo">
           <img src="../assets/icons/logo-footer.svg" alt="">
-          <div class="social-networks__title">Соц.сети</div>
-          <div class="social-networks__list">
-            <a :href="socialNetworks.vk" target="_blank"><img src="../assets/icons/icon-vk.svg" alt="vk"></a>
-            <a :href="socialNetworks.insta" target="_blank"><img src="../assets/icons/icon-insta.svg" alt="instagram"></a>
-            <a href="" style="display: none" target="_blank"><img src="../assets/icons/icon-telegram.svg" alt="telegram"></a>
-          </div>
-          <div class="social-networks__payment">
-            <img src="../assets/icons/icon-mastercard.svg" alt="mastercard">
-            <img src="../assets/icons/icon-visa.svg" alt="visa">
-            <img src="../assets/icons/icon-mir.svg" alt="mir">
-          </div>
         </div>
         <div class="nav">
           <div class="nav__title">Навигация</div>
@@ -33,6 +22,19 @@
           <span class="phones__item">
             <a :href="`tel:${phones.cooperation.split(' ').join('')}`">{{ phones.cooperation }}</a>
           </span>
+        </div>
+        <div class="social-networks">
+          <div class="social-networks__title">Соц.сети</div>
+          <div class="social-networks__list">
+            <a href="" target="_blank"><img src="../assets/icons/telegram.svg" alt="telegram"></a>
+            <a :href="socialNetworks.vk" target="_blank"><img src="../assets/icons/vk.svg" alt="vk"></a>
+            <a :href="socialNetworks.insta" target="_blank"><img src="../assets/icons/insta.svg" alt="instagram"></a>
+          </div>
+          <div class="social-networks__payment">
+            <img src="../assets/icons/icon-mastercard.svg" alt="mastercard">
+            <img src="../assets/icons/icon-visa.svg" alt="visa">
+            <img src="../assets/icons/icon-mir.svg" alt="mir">
+          </div>
         </div>
         <div class="address">
           <div class="address__title">Адрес</div>
@@ -119,8 +121,8 @@ export default {
     margin-bottom: 26px;
     .nav {
       &__title {
-        font-size: 3rem;
-        line-height: 70px;
+        font-size: 1.5rem;
+        line-height: 40px;
         margin-bottom: 10px;
       }
       ul {
@@ -132,8 +134,8 @@ export default {
         margin: 0;
         cursor: pointer;
         li a {
-          font-size: 1.5rem;
-          line-height: 33px;
+          font-size: 1.25rem;
+          line-height: 30px;
           cursor: pointer;
           color: #B7B7B7;
           font-weight: 300;
@@ -148,24 +150,24 @@ export default {
       display: flex;
       flex-direction: column;
       &__title {
-        font-size: 3rem;
-        line-height: 70px;
+        font-size: 1.5rem;
+        line-height: 40px;
         margin-bottom: 10px;
       }
       &__item {
         margin-bottom: 15px;
         a {
           font-weight: 300;
-          font-size: 1.5rem;
-          line-height: 33px;
+          font-size: 1.25rem;
+          line-height: 30px;
           cursor: pointer;
           text-decoration: none;
         }
       }
       &__cooperation {
         font-weight: 300;
-        font-size: 1.5rem;
-        line-height: 33px;
+        font-size: 1.25rem;
+        line-height: 30px;
         color: $grey-3;
         margin-bottom: 15px;
       }
@@ -175,8 +177,8 @@ export default {
         margin-bottom: 10px;
       }
       &__title {
-        font-size: 3rem;
-        line-height: 70px;
+        font-size: 1.5rem;
+        line-height: 40px;
         margin-bottom: 16px;
         text-align: center;
       }
@@ -186,7 +188,6 @@ export default {
         justify-content: center;
       }
       &__list {
-        margin-bottom: 20px;
         gap: 25px;
         img {
           cursor: pointer;
@@ -194,41 +195,36 @@ export default {
       }
       &__payment {
         gap: 16px;
+        img {
+          width: 80%;
+        }
       }
     }
     .address {
       &__title {
-        font-size: 3rem;
-        line-height: 70px;
+        font-size: 1.5rem;
+        line-height: 40px;
         margin-bottom: 10px;
-      }
-      &__list {
       }
       &__item {
         display: flex;
         flex-direction: column;
         &-name {
-          font-size: 1.5rem;
-          line-height: 33px;
+          font-size: 1.25rem;
+          line-height: 30px;
           font-weight: 300;
         }
         &-link {
           display: flex;
           gap: 14px;
+          cursor: pointer;
           span {
-            font-size: 1.5rem;
-            line-height: 33px;
+            font-size: 1.25rem;
+            line-height: 30px;
             font-weight: 300;
             color: #FF5D29;
-            cursor: pointer;
           }
         }
-      }
-      &__map {
-        width: 420px;
-        height: 200px;
-        border-radius: 5px;
-        overflow: hidden;
       }
     }
   }
